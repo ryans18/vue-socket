@@ -5,6 +5,7 @@
 </template>
 <script>
 import vueQr from 'vue-qr';
+import { setToken } from '@/utils/auth';
 export default {
     name: 'QrcodeSocket',
     components: {
@@ -43,6 +44,8 @@ export default {
         },
         getMessage(msg) {
             console.log(msg.data)
+            setToken(msg.data)
+            this.$router.push({ path: '/main' })
         },
         send() {
             this.socket.send("fafa")

@@ -8,7 +8,10 @@ export const constantRoutes = [
     path: '/login',
     component: () => import('../views/login'),
   },
-
+  {
+    path: '/main',
+    component:() => import('@/views/main'),
+  },
   {
     path: '/404',
     component: () => import('@/views/404'),
