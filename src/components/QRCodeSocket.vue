@@ -1,6 +1,9 @@
 <template>
     <div>
-        <vue-qr text='QR:PC1' :size='200'/>
+        <button class="btn" @click="init">登录</button>
+        <div>
+            <vue-qr text='QR:PC1' :size='200' v-show="isShowQR"/>
+        </div>
     </div>
 </template>
 <script>
@@ -13,16 +16,14 @@ export default {
     },
     data () {
         return {
+            isShowQR: false,
             path:"ws://127.0.0.1:8088/ws/login/PC1",
             socket:""
         }
     },
-    mounted () {
-        // 初始化
-        this.init()
-    },
     methods: {
         init(){
+            this.isShowQR = true
             if(typeof(WebSocket) === "undefined"){
                 alert("您的浏览器不支持socket")
             }else{

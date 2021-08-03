@@ -1,15 +1,5 @@
-import request from '@/utils/request'
-
-export function logout() {
-    return request({
-      url: '/vue-admin-template/user/logout',
-      method: 'post'
-    })
-}
+import {get} from '@/utils/request'
 
 export const getUser= () => {
-  return request({
-    url: '/api/user',
-    method: 'get'
-  })
+  return get('/api/user', '');
 };

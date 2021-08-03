@@ -1,9 +1,8 @@
 <template>
     <div>
         <h2>您尚未登录，请扫码登录</h2>
-        <button class="btn" @click="isShowQr=true">登录</button>
         <div>
-            <qr-code-socket v-show="isShowQr"/>
+            <qr-code-socket/>
         </div>
     </div>
 </template>
@@ -14,11 +13,6 @@ export default {
     name:'Login',
     components: {
         QrCodeSocket
-    },
-    data() {
-        return {
-            isShowQr: false
-        }
     }
 }
 </script>
